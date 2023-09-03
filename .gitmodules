@@ -1,0 +1,39 @@
+[submodule "PayloadsAllTheThings"]
+	path = PayloadsAllTheThings
+	url = https://github.com/swisskyrepo/PayloadsAllTheThings
+[submodule "SecLists"]
+	path = SecLists
+	url = https://github.com/danielmiessler/SecLists
+[submodule "bruteforce-lists"]
+	path = bruteforce-lists
+	url = https://github.com/random-robbie/bruteforce-lists
+[submodule "fuzzDicts"]
+	path = fuzzDicts
+	url = https://github.com/TheKingOfDuck/fuzzDicts
+[submodule "leaky-paths"]
+	path = leaky-paths
+	url = https://github.com/ayoubfathi/leaky-paths
+[submodule "many-passwords"]
+	path = many-passwords
+	url = https://github.com/many-passwords/many-passwords
+[submodule "resolvers"]
+	path = resolvers
+	url = https://github.com/trickest/resolvers
+[submodule "wordlists"]
+	path = wordlists
+	url = https://github.com/trickest/wordlists
+[submodule "tools/Burp/bapps/GAP-Burp-Extension"]
+	path = tools/Burp/bapps/GAP-Burp-Extension
+	url = https://github.com/xnl-h4ck3r/GAP-Burp-Extension
+[submodule "tools/Burp/bapps/BurpSuiteSharpener"]
+	path = tools/Burp/bapps/BurpSuiteSharpener
+	url = https://github.com/mdsecresearch/BurpSuiteSharpener
+[submodule "tools/Burp/bapps/LoggerPlusPlus"]
+	path = tools/Burp/bapps/LoggerPlusPlus
+	url = https://github.com/nccgroup/LoggerPlusPlus
+[submodule "tools/Burp/bapps/burp-awesome-tls"]
+	path = tools/Burp/bapps/burp-awesome-tls
+	url = https://github.com/sleeyax/burp-awesome-tls
+[submodule "tools/Burp/bapps/TProxer"]
+	path = tools/Burp/bapps/TProxer
+	url = https://github.com/ethicalhackingplayground/TProxer
