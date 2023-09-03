@@ -1,4 +1,5 @@
 # hackPanion
+Keep all useful repos in one place and constantly up-to-date
 
 ## Clone
 
@@ -58,7 +59,7 @@ name: Pull Submodules & Repackage
 
 on:
   schedule:
-    - cron: '50 18 * * *'
+    - cron: '50 18 * * *' 
   workflow_dispatch:
 
 jobs:
@@ -71,7 +72,7 @@ jobs:
       with:
         submodules: recursive
         token: ${{ secrets.GITHUB_TOKEN }}
-
+        
     - name: Set up Git
       run: |
         git config --local user.email "not@osirys.me"
@@ -82,11 +83,10 @@ jobs:
     - name: Update submodules to the latest commit
       run: |
         git submodule update --init --recursive --depth=1  # Initialize all submodules first
-        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --depth=1 origin || echo 
-"Failed to update submodule"'
+        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --depth=1 origin || echo "Failed to update submodule"'
     - name: Commit and push submodule changes
-      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push 
---force-with-lease || echo "Push failed")
+      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
+
 
 ```
 
