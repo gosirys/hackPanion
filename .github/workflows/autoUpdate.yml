@@ -20,6 +20,7 @@ jobs:
       run: |
         git config --local user.email "not@osirys.me"
         git config --local user.name "Osirys"
+        git config pull.ff only
     - name: Pull latest changes for the main repo
       run: git pull origin $(git branch --show-current) || echo "Failed to pull latest changes"
 
