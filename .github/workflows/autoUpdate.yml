@@ -20,13 +20,13 @@ jobs:
       run: |
         git config --local user.email "not@osirys.me"
         git config --local user.name "Osirys"
-        git config pull.ff only
+
     - name: Pull latest changes for the main repo
       run: git pull origin $(git branch --show-current) || echo "Failed to pull latest changes"
 
     - name: Update submodules to the latest commit
       run: |
         git submodule update --init --recursive --depth=1  # Initialize all submodules first
-        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --depth=1 origin || echo "Failed to update submodule"'
+        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --ff-only --depth=1 origin || echo "Failed to update submodule"'
     - name: Commit and push submodule changes
       run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
