@@ -71,22 +71,24 @@ jobs:
       uses: actions/checkout@v3
       with:
         submodules: recursive
+        repository: ${{ github.repository }}
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Set up Git
       run: |
-        git config --local user.email "not@osirys.me"
-        git config --local user.name "Osirys"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
     - name: Pull latest changes for the main repo
-      run: git pull origin $(git branch --show-current) || echo "Failed to pull latest changes"
+      run: git pull origin $(git branch --show-current)
 
     - name: Update submodules to the latest commit
       run: |
         git submodule update --init --recursive --depth=1  # Initialize all submodules first
-        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --depth=1 origin || echo "Failed to update submodule"'
-    - name: Commit and push submodule changes
-      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
+        git submodule foreach --recursive 'git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) || echo "Failed to reset submodule"'
 
+    - name: Commit and push submodule changes
+      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease)
 
 ```
 
