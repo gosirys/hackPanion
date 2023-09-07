@@ -26,7 +26,7 @@ jobs:
     - name: Set Git Remote with Token
       run: |
         
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
     - name: Pull latest changes for the main repo
       run: git pull origin $(git branch --show-current)
