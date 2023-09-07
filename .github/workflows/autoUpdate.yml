@@ -27,6 +27,6 @@ jobs:
     - name: Update submodules to the latest commit
       run: |
         git submodule update --init --recursive --depth=1  # Initialize all submodules first
-        git submodule foreach --recursive 'git checkout $(git rev-parse --abbrev-ref HEAD) && git pull --ff-only --depth=1 origin || echo "Failed to update submodule"'
+        git submodule foreach --recursive 'git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) || echo "Failed to reset submodule"'
     - name: Commit and push submodule changes
       run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
