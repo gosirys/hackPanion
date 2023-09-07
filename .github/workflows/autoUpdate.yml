@@ -18,8 +18,9 @@ jobs:
         
     - name: Set up Git
       run: |
-        git config --local user.email "not@osirys.me"
-        git config --local user.name "Osirys"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git config --local http.https://github.com/.extraheader "AUTHORIZATION: bearer ${{ secrets.GITHUB_TOKEN }}"
 
     - name: Pull latest changes for the main repo
       run: git pull origin $(git branch --show-current) || echo "Failed to pull latest changes"
@@ -28,5 +29,6 @@ jobs:
       run: |
         git submodule update --init --recursive --depth=1  # Initialize all submodules first
         git submodule foreach --recursive 'git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) || echo "Failed to reset submodule"'
+    
     - name: Commit and push submodule changes
       run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
