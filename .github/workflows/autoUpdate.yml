@@ -14,6 +14,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         submodules: recursive
+        repository: ${{ github.repository }}
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Set up Git
@@ -22,9 +23,12 @@ jobs:
         git config --local user.name "GitHub Action"
         git config --local http.https://github.com/.extraheader "AUTHORIZATION: bearer ${{ secrets.GITHUB_TOKEN }}"
 
+    - name: Set Git Remote with Token
+      run: |
+        git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/gosirys/hackPanion.git
 
     - name: Pull latest changes for the main repo
-      run: git pull origin $(git branch --show-current) || echo "Failed to pull latest changes"
+      run: git pull origin $(git branch --show-current)
 
     - name: Update submodules to the latest commit
       run: |
@@ -32,4 +36,4 @@ jobs:
         git submodule foreach --recursive 'git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) || echo "Failed to reset submodule"'
 
     - name: Commit and push submodule changes
-      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease || echo "Push failed")
+      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease)
