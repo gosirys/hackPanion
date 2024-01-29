@@ -1,5 +1,5 @@
 # hackPanion
-Keep all useful repos in one place and constantly up-to-date
+Have your favourite repositories, always upt-to-date - available in a single repo.
 
 ## Clone
 
@@ -92,3 +92,42 @@ jobs:
 
 ```
 
+## Individual files tracking
+
+This action can be useful if your repo depends on specific files in other repo and you want to be notified every time these files are changed.
+From: https://github.com/poll-github-repo/action
+
+This should be adaptable to update your repo based on the files it needs from the tracked repos, rather than just creating an issue.
+
+Example:
+```
+name: test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: poll-github-repo/action@v1
+        with:
+          repo-to-sync: poll-github-repo/dummy-source-repo
+          
+          # Path to the file in <repo-to-sync> that you want to track
+          path-to-sync: data.txt
+
+          # NOTE: this file (cache-path) MUST exist before the action runs
+          cache-path: .last-sync
+          tracking-issue-label: upstream-data-txt
+          tracking-issue-title: "Update on {{ path }}: {{ sha-short }}"
+          tracking-issue-body: |
+            New commit in poll-github-repo/dummy-source-repo:
+
+            **{{ message }}** [link]({{ url }})
+          token: ${{ secrets.GITHUB_TOKEN }}
+          yes-create-issues: true
+```
