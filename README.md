@@ -6,7 +6,7 @@ This is my personal companion repo I take with me on new machines where I need t
 As long as I pull this, I know it will have all other repos updated.
 
 
-I called it "companion" as with it it bring hackers' most underrated friends: wordlists, payloads, dictionaries and so on.
+I called it "companion" as with it it brings hackers' most underrated friends: wordlists, payloads, dictionaries and so on.
 
 Being public this is limited to public repositories only. If you like me need to have all your secret and private weapones as well, you can just apply this concept like I have:
 Say yiu have custom dictionaries, payloads, exploits all siting on private repositories, just repackage it all together in a "final companion" so it will have:
