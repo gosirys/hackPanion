@@ -11,7 +11,7 @@ I called it "companion" as with it it brings hackers' most underrated friends: w
 Being public this is limited to public repositories only. If you like me need to have all your secret and private weapones as well, you can just apply this concept like I have:
 Say yiu have custom dictionaries, payloads, exploits all siting on private repositories, just repackage it all together in a "final companion" so it will have:
 - all your private "companions" 
-- + the "public" companion (for me, HackPanion)
+- the "public" companion (for me, HackPanion)
 
 
 
