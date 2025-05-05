@@ -2,7 +2,18 @@
 > Scaffolded from [one-multi-repos](https://github.com/gosirys/one-multi-repos):  
 > automated submodule setup + GitHub Actions for keep-up-to-date modules.
 
-Have your favourite repositories, always up-to-date — available in a single repo.
+This is my personal companion repo I take with me on new machines where I need to perform security testing.
+As long as I pull this, I know it will have all other repos updated.
+
+
+I called it "companion" as with it it bring hackers' most underrated friends: wordlists, payloads, dictionaries and so on.
+
+Being public this is limited to public repositories only. If you like me need to have all your secret and private weapones as well, you can just apply this concept like I have:
+Say yiu have custom dictionaries, payloads, exploits all siting on private repositories, just repackage it all together in a "final companion" so it will have:
+- all your private "companions" 
+- + the "public" companion (for me, HackPanion)
+
+
 
 ---
 ## Usage
