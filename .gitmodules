@@ -37,3 +37,12 @@
 [submodule "tools/Burp/bapps/TProxer"]
 	path = tools/Burp/bapps/TProxer
 	url = https://github.com/ethicalhackingplayground/TProxer
+[submodule "fingerprint/fingers"]
+	path = fingerprint/fingers
+	url = https://github.com/chainreactors/fingers.git
+[submodule "fingerprint/FingerprintHub"]
+	path = fingerprint/FingerprintHub
+	url = https://github.com/0x727/FingerprintHub.git
+[submodule "fingerprint/EHole"]
+	path = fingerprint/EHole
+	url = https://github.com/EdgeSecurityTeam/EHole.git

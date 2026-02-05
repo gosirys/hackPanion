@@ -2,7 +2,7 @@ name: Pull Submodules & Repackage
 
 on:
   schedule:
-    - cron: '50 18 * * *' 
+    - cron: '58 18 * * *'    # adjust as needed
   workflow_dispatch:
 
 jobs:
@@ -10,27 +10,84 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository with submodules
-      uses: actions/checkout@v3
-      with:
-        submodules: recursive
-        repository: ${{ github.repository }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Set up Git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        # git config --local http.https://github.com/.extraheader "AUTHORIZATION: bearer ${{ secrets.GITHUB_TOKEN }}"
+      - name: Checkout repo w/ submodules
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: ${{ secrets.CUSTOM_PAT || secrets.GITHUB_TOKEN }}
 
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
 
-    - name: Pull latest changes for the main repo
-      run: git pull origin $(git branch --show-current)
+      - name: Pull main repo updates
+        run: git pull origin $(git branch --show-current)
 
-    - name: Update submodules to the latest commit
-      run: |
-        git submodule update --init --recursive --depth=1  # Initialize all submodules first
-        git submodule foreach --recursive 'git fetch origin && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) || echo "Failed to reset submodule"'
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive --depth=1
+          git submodule foreach --recursive '
+            git fetch origin \
+            && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) \
+            || echo "Failed to reset submodule"'
 
-    - name: Commit and push submodule changes
-      run: git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Updated submodules" && git push --force-with-lease)
+      - name: Restore sparse checkout configuration
+        run: |
+          SPARSE_CONFIG=".sparse-checkout-config"
+          if [[ -f "$SPARSE_CONFIG" ]]; then
+            echo "Restoring sparse checkout configuration..."
+            while IFS=':' read -r name paths; do
+              [[ -z "$name" ]] && continue
+              submodule_path="fingerprint/$name"
+              if [[ -d "$submodule_path" ]]; then
+                echo "  → Configuring sparse checkout for $name: $paths"
+                pushd "$submodule_path" > /dev/null
+
+                IFS=',' read -ra path_array <<< "$paths"
+
+                # Check if any path is a file (doesn't end with /)
+                has_files=false
+                for p in "${path_array[@]}"; do
+                  if [[ "$p" != */ ]]; then
+                    has_files=true
+                    break
+                  fi
+                done
+
+                if $has_files; then
+                  git sparse-checkout init --no-cone
+                else
+                  git sparse-checkout init --cone
+                fi
+                git sparse-checkout set "${path_array[@]}"
+
+                popd > /dev/null
+              fi
+            done < "$SPARSE_CONFIG"
+            echo "✔ Sparse checkout configuration restored"
+          else
+            echo "No sparse checkout configuration found (full repo sync for all)"
+          fi
+
+      - name: Commit changes in submodules
+        run: |
+          git submodule foreach --recursive '
+            if [ -n "$(git status --porcelain)" ]; then
+              git add -A
+              git commit -m "chore: auto-commit submodule changes in $(basename $PWD)"
+              git push --force-with-lease || echo "Push failed in submodule $(basename $PWD)"
+            else
+              echo "No changes in submodule $(basename $PWD)"
+            fi
+          '
+
+      - name: Commit & push submodule pointer updates
+        run: |
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git add .
+            git commit -m "chore: update submodule pointers"
+            git push --force-with-lease
+          else
+            echo "No submodule pointer updates to commit."
+          fi
