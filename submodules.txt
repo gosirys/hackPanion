@@ -1,0 +1,14 @@
+# Fingerprint Data Sources - Selective Sync
+# Format: repo_url:path1,path2,path3
+# - Directories should end with /
+# - Multiple paths separated by commas (no spaces)
+
+# fingers - Contains ALL fingerprint data pre-compiled in resources/
+# Includes: ehole, fingerprinthub, goby, wappalyzer, nmap, etc.
+https://github.com/chainreactors/fingers.git:resources/
+
+# fingerprinthub - Web fingerprints (original source)
+https://github.com/0x727/FingerprintHub.git:web_fingerprint_v3.json
+
+# ehole - Fingerprint rules (original source)
+https://github.com/EdgeSecurityTeam/EHole.git:finger.json
