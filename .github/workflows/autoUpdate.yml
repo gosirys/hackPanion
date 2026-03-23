@@ -89,12 +89,45 @@ jobs:
             fi
           '
 
-      - name: Commit & push submodule pointer updates
+      - name: Update README submodule status table
         run: |
-          if ! git diff --quiet || ! git diff --staged --quiet; then
-            git add .
+          TABLE="| Repository | Path | Last Updated |\n|:-----------|:-----|:-------------|"
+
+          # Build rows: origin repo name, local path, last commit date
+          while IFS= read -r line; do
+            sm_path="$(echo "$line" | awk '{print $2}')"
+            sm_url="$(git config -f .gitmodules --get "submodule.${sm_path}.url" 2>/dev/null || echo "")"
+            [[ -z "$sm_url" ]] && continue
+
+            # Get repo name and build GitHub link
+            repo_name="$(basename -s .git "$sm_url")"
+            repo_link="[${repo_name}](${sm_url%.git})"
+
+            # Get last commit date from the submodule
+            last_updated="$(git -C "$sm_path" log -1 --format='%ai' 2>/dev/null | cut -d' ' -f1)"
+            [[ -z "$last_updated" ]] && last_updated="unknown"
+
+            TABLE="${TABLE}\n| ${repo_link} | \`${sm_path}\` | ${last_updated} |"
+          done < <(git submodule status | sort -t'|' -k4 -r)
+
+          # Sort rows by date (descending), keeping header
+          HEADER="$(echo -e "$TABLE" | head -2)"
+          ROWS="$(echo -e "$TABLE" | tail -n +3 | sort -t'|' -k4 -r)"
+          SORTED_TABLE="${HEADER}\n${ROWS}"
+
+          # Replace content between markers in README
+          awk -v table="$(echo -e "$SORTED_TABLE")" '
+            /<!-- SUBMODULE-STATUS:START -->/ { print; print table; skip=1; next }
+            /<!-- SUBMODULE-STATUS:END -->/   { skip=0 }
+            !skip { print }
+          ' README.md > README.md.tmp && mv README.md.tmp README.md
+
+      - name: Commit & push updates
+        run: |
+          git add .
+          if ! git diff --staged --quiet; then
             git commit -m "chore: update submodule pointers"
             git push --force-with-lease
           else
-            echo "No submodule pointer updates to commit."
+            echo "No updates to commit."
           fi

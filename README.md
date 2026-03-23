@@ -48,6 +48,35 @@ To add a new selective-sync repo, edit `submodules.txt` and run `scripts/init-su
 
 ---
 
+## Submodule Status
+
+> Auto-updated daily by GitHub Actions. Sorted by last updated (most recent first).
+
+<!-- SUBMODULE-STATUS:START -->
+| Repository | Path | Last Updated |
+|:-----------|:-----|:-------------|
+| [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-03-23 |
+| [wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-03-22 |
+| [SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-03-22 |
+| [resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-03-22 |
+| [FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-03-22 |
+| [cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-03-22 |
+| [burp-awesome-tls](https://github.com/sleeyax/burp-awesome-tls) | `tools/Burp/bapps/burp-awesome-tls` | 2026-03-19 |
+| [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-03-16 |
+| [leaky-paths](https://github.com/ayoubfathi/leaky-paths) | `leaky-paths` | 2026-02-22 |
+| [bruteforce-lists](https://github.com/random-robbie/bruteforce-lists) | `bruteforce-lists` | 2026-02-18 |
+| [fingers](https://github.com/chainreactors/fingers) | `fingerprint/fingers` | 2026-02-03 |
+| [GAP-Burp-Extension](https://github.com/xnl-h4ck3r/GAP-Burp-Extension) | `tools/Burp/bapps/GAP-Burp-Extension` | 2026-01-08 |
+| [many-passwords](https://github.com/many-passwords/many-passwords) | `many-passwords` | 2024-09-06 |
+| [LoggerPlusPlus](https://github.com/nccgroup/LoggerPlusPlus) | `tools/Burp/bapps/LoggerPlusPlus` | 2023-12-05 |
+| [fuzzDicts](https://github.com/TheKingOfDuck/fuzzDicts) | `fuzzDicts` | 2023-11-13 |
+| [EHole](https://github.com/EdgeSecurityTeam/EHole) | `fingerprint/EHole` | 2023-06-14 |
+| [BurpSuiteSharpener](https://github.com/mdsecresearch/BurpSuiteSharpener) | `tools/Burp/bapps/BurpSuiteSharpener` | 2023-06-05 |
+| [TProxer](https://github.com/ethicalhackingplayground/TProxer) | `tools/Burp/bapps/TProxer` | 2021-11-22 |
+<!-- SUBMODULE-STATUS:END -->
+
+---
+
 ## Repositories included
 
 ### Wordlists & Payloads
@@ -87,7 +116,3 @@ To add a new selective-sync repo, edit `submodules.txt` and run `scripts/init-su
 | [LoggerPlusPlus](https://github.com/nccgroup/LoggerPlusPlus)                          | A multithreaded logging extension for Burp Suite with advanced filtering and export options.              |
 | [burp-awesome-tls](https://github.com/sleeyax/burp-awesome-tls)                        | A Burp extension to evade TLS fingerprinting, bypass WAFs, and spoof browser TLS profiles.                 |
 | [TProxer](https://github.com/ethicalhackingplayground/TProxer)                        | Automates discovery of reverse-proxy-based SSRF paths within Burp Suite.                                   |
-
-
-
-
