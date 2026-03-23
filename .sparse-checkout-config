@@ -1,4 +1,9 @@
-fingers:resources/*.json.gz,resources/*.yaml
-FingerprintHub:web_fingerprint_v3.json
-EHole:finger.json
-cdncheck:sources_data.json
+fingerprint/fingers:resources/*.json.gz,resources/*.yaml
+fingerprint/FingerprintHub:web_fingerprint_v3.json
+fingerprint/EHole:finger.json
+fingerprint/cdncheck:sources_data.json
+resolvers:*.txt
+many-passwords:*.csv
+nuclei-templates:**/*.yaml,**/*.json
+PayloadsAllTheThings:**/*.txt,**/*.xml,**/*.xsl,**/*.php,**/*.html,**/*.py,**/*.json,**/*.yml,**/*.sample,**/*.zip
+SecLists:**/*.txt,**/*.csv

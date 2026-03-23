@@ -76,29 +76,31 @@ To add a new selective-sync repo, edit `submodules.txt` and run `scripts/init-su
 
 ### Wordlists & Payloads
 
-| Repository                                              | Description                                                                                               |
-|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
-| [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | A curated list of payloads and bypasses for web application security testing and pentests.                |
-| [SecLists](https://github.com/danielmiessler/SecLists)                                   | A comprehensive collection of usernames, passwords, URLs, fuzzing payloads, web shells, and more for security assessments. |
-| [bruteforce-lists](https://github.com/random-robbie/bruteforce-lists)                  | Wordlists and data files tailored for brute-forcing various targets.                                       |
-| [fuzzDicts](https://github.com/TheKingOfDuck/fuzzDicts)                                | Ready-to-use dictionaries designed specifically for web application fuzzing.                               |
-| [leaky-paths](https://github.com/ayoubfathi/leaky-paths)                               | Known sensitive or misconfigured paths and endpoints for rapid content discovery.                          |
-| [many-passwords](https://github.com/many-passwords/many-passwords)                     | Default and common credential lists for IoT devices, admin panels, and embedded systems.                   |
-| [resolvers](https://github.com/trickest/resolvers)                                    | An exhaustive, validated list of reliable public DNS resolvers.                                           |
-| [wordlists](https://github.com/trickest/wordlists)                                    | A curated collection of real-world wordlists for reconnaissance and brute-forcing.                         |
+All repos below use selective sync to only keep data files (no images, docs, scripts, etc). See `.sparse-checkout-config` for exact patterns.
+
+| Repository                                              | Synced | Description                                                                                               |
+|:--------------------------------------------------------|:-------|:----------------------------------------------------------------------------------------------------------|
+| [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `txt, xml, xsl, php, html, py, json, yml, zip` | Payloads and bypasses for web application security testing.                |
+| [SecLists](https://github.com/danielmiessler/SecLists) | `txt, csv` | Comprehensive collection of wordlists for security assessments. |
+| [bruteforce-lists](https://github.com/random-robbie/bruteforce-lists) | full | Wordlists and data files tailored for brute-forcing various targets.                                       |
+| [fuzzDicts](https://github.com/TheKingOfDuck/fuzzDicts) | full | Ready-to-use dictionaries designed specifically for web application fuzzing.                               |
+| [leaky-paths](https://github.com/ayoubfathi/leaky-paths) | full | Known sensitive or misconfigured paths and endpoints for rapid content discovery.                          |
+| [many-passwords](https://github.com/many-passwords/many-passwords) | `csv` | Default and common credential lists for IoT devices, admin panels, and embedded systems.                   |
+| [resolvers](https://github.com/trickest/resolvers) | `txt` | An exhaustive, validated list of reliable public DNS resolvers.                                           |
+| [wordlists](https://github.com/trickest/wordlists) | full | A curated collection of real-world wordlists for reconnaissance and brute-forcing.                         |
 
 ### Fingerprinting & Detection (selective sync)
 
-| Repository                                              | Synced paths | Description                                                                           |
-|:--------------------------------------------------------|:-------------|:--------------------------------------------------------------------------------------|
+| Repository                                              | Synced | Description                                                                           |
+|:--------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------|
 | [fingers](https://github.com/chainreactors/fingers)    | `resources/*.json.gz, *.yaml` | Pre-compiled fingerprint data (ehole, fingerprinthub, goby, wappalyzer, nmap, etc.)   |
 | [FingerprintHub](https://github.com/0x727/FingerprintHub) | `web_fingerprint_v3.json` | Web technology fingerprint definitions.                                    |
 | [EHole](https://github.com/EdgeSecurityTeam/EHole)     | `finger.json` | Fingerprint rules for identifying web frameworks and CMS.                             |
 | [cdncheck](https://github.com/projectdiscovery/cdncheck) | `sources_data.json` | CDN, WAF, and cloud provider IP ranges.                                         |
 
-### Vulnerability Templates
+### Vulnerability Templates (selective sync)
 
-| Repository                                              | Description                                                                                               |
-|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
-| [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | Community-curated vulnerability templates for the Nuclei scanner.                     |
+| Repository                                              | Synced | Description                                                                           |
+|:--------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------|
+| [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `yaml, json` | Community-curated vulnerability templates for the Nuclei scanner. |
 

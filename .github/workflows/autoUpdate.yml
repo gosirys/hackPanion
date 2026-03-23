@@ -37,37 +37,20 @@ jobs:
           SPARSE_CONFIG=".sparse-checkout-config"
           if [[ -f "$SPARSE_CONFIG" ]]; then
             echo "Restoring sparse checkout configuration..."
-            while IFS=':' read -r name paths; do
-              [[ -z "$name" ]] && continue
-              submodule_path="fingerprint/$name"
-              if [[ -d "$submodule_path" ]]; then
-                echo "  → Configuring sparse checkout for $name: $paths"
-                pushd "$submodule_path" > /dev/null
+            while IFS=':' read -r sm_path paths; do
+              [[ -z "$sm_path" || "${sm_path:0:1}" == "#" ]] && continue
+              if [[ -d "$sm_path" ]]; then
+                echo "  → Configuring sparse checkout for $sm_path: $paths"
+                pushd "$sm_path" > /dev/null
 
                 IFS=',' read -ra path_array <<< "$paths"
-
-                # Check if any path is a file (doesn't end with /)
-                has_files=false
+                prefixed=()
                 for p in "${path_array[@]}"; do
-                  if [[ "$p" != */ ]]; then
-                    has_files=true
-                    break
-                  fi
+                  [[ "$p" != /* ]] && p="/$p"
+                  prefixed+=("$p")
                 done
-
-                if $has_files; then
-                  # Prefix paths with / for exact matching in non-cone mode
-                  prefixed=()
-                  for p in "${path_array[@]}"; do
-                    [[ "$p" != /* ]] && p="/$p"
-                    prefixed+=("$p")
-                  done
-                  git sparse-checkout init --no-cone
-                  git sparse-checkout set "${prefixed[@]}"
-                else
-                  git sparse-checkout init --cone
-                  git sparse-checkout set "${path_array[@]}"
-                fi
+                git sparse-checkout init --no-cone
+                git sparse-checkout set "${prefixed[@]}"
 
                 popd > /dev/null
               fi
