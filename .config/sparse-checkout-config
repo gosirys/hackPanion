@@ -7,3 +7,4 @@ many-passwords:*.csv
 nuclei-templates:**/*.yaml,**/*.json
 PayloadsAllTheThings:**/*.txt,**/*.xml,**/*.xsl,**/*.php,**/*.html,**/*.py,**/*.json,**/*.yml,**/*.sample,**/*.zip
 SecLists:**/*.txt,**/*.csv
+wordlists:**/*.txt

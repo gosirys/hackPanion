@@ -5,7 +5,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-SPARSE_CONFIG="$REPO_ROOT/.sparse-checkout-config"
+SPARSE_CONFIG="$REPO_ROOT/.config/sparse-checkout-config"
 
 if [[ ! -f "$SPARSE_CONFIG" ]]; then
   exit 0

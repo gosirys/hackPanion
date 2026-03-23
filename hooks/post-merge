@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Automatically apply sparse checkout after pull/merge
-"$(git rev-parse --show-toplevel)/scripts/apply-sparse-checkout.sh"

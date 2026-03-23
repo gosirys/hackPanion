@@ -34,7 +34,7 @@ jobs:
 
       - name: Restore sparse checkout configuration
         run: |
-          SPARSE_CONFIG=".sparse-checkout-config"
+          SPARSE_CONFIG=".config/sparse-checkout-config"
           if [[ -f "$SPARSE_CONFIG" ]]; then
             echo "Restoring sparse checkout configuration..."
             while IFS=':' read -r sm_path paths; do

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CONFIG=submodules.txt
+CONFIG=.config/submodules.txt
 TARGET=fingerprint
-SPARSE_CONFIG=".sparse-checkout-config"
+SPARSE_CONFIG=".config/sparse-checkout-config"
 
 # Ensure GitHub CLI is available and authenticated
 if ! command -v gh &>/dev/null; then
