@@ -99,8 +99,8 @@ jobs:
             sm_url="$(git config -f .gitmodules --get "submodule.${sm_path}.url" 2>/dev/null || echo "")"
             [[ -z "$sm_url" ]] && continue
 
-            # Get repo name and build GitHub link
-            repo_name="$(basename -s .git "$sm_url")"
+            # Get user/repo name and build GitHub link
+            repo_name="$(echo "${sm_url%.git}" | sed 's|.*github\.com/||')"
             repo_link="[${repo_name}](${sm_url%.git})"
 
             # Get last commit date from the submodule
