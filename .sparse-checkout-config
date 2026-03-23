@@ -1,3 +1,4 @@
-fingers:resources/
+fingers:resources/*.json.gz,resources/*.yaml
 FingerprintHub:web_fingerprint_v3.json
 EHole:finger.json
+cdncheck:sources_data.json

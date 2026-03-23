@@ -63,8 +63,14 @@ configure_sparse_checkout() {
 
 	if $has_files; then
 		# Use non-cone mode for file-level granularity
+		# Prefix paths with / for exact matching in non-cone mode
+		local prefixed=()
+		for p in "${path_array[@]}"; do
+			[[ "$p" != /* ]] && p="/$p"
+			prefixed+=("$p")
+		done
 		git sparse-checkout init --no-cone
-		git sparse-checkout set "${path_array[@]}"
+		git sparse-checkout set "${prefixed[@]}"
 	else
 		# Use cone mode for directories (better performance)
 		git sparse-checkout init --cone

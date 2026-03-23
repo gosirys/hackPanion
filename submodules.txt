@@ -5,10 +5,13 @@
 
 # fingers - Contains ALL fingerprint data pre-compiled in resources/
 # Includes: ehole, fingerprinthub, goby, wappalyzer, nmap, etc.
-https://github.com/chainreactors/fingers.git:resources/
+https://github.com/chainreactors/fingers.git:resources/*.json.gz,resources/*.yaml
 
 # fingerprinthub - Web fingerprints (original source)
 https://github.com/0x727/FingerprintHub.git:web_fingerprint_v3.json
 
 # ehole - Fingerprint rules (original source)
 https://github.com/EdgeSecurityTeam/EHole.git:finger.json
+
+# cdncheck - CDN/WAF/Cloud provider IP ranges
+https://github.com/projectdiscovery/cdncheck.git:sources_data.json

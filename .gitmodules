@@ -46,3 +46,9 @@
 [submodule "fingerprint/EHole"]
 	path = fingerprint/EHole
 	url = https://github.com/EdgeSecurityTeam/EHole.git
+[submodule "nuclei-templates"]
+	path = nuclei-templates
+	url = https://github.com/projectdiscovery/nuclei-templates
+[submodule "fingerprint/cdncheck"]
+	path = fingerprint/cdncheck
+	url = https://github.com/projectdiscovery/cdncheck

@@ -56,11 +56,18 @@ jobs:
                 done
 
                 if $has_files; then
+                  # Prefix paths with / for exact matching in non-cone mode
+                  prefixed=()
+                  for p in "${path_array[@]}"; do
+                    [[ "$p" != /* ]] && p="/$p"
+                    prefixed+=("$p")
+                  done
                   git sparse-checkout init --no-cone
+                  git sparse-checkout set "${prefixed[@]}"
                 else
                   git sparse-checkout init --cone
+                  git sparse-checkout set "${path_array[@]}"
                 fi
-                git sparse-checkout set "${path_array[@]}"
 
                 popd > /dev/null
               fi

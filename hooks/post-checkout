@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Automatically apply sparse checkout after checkout/clone
+"$(git rev-parse --show-toplevel)/scripts/apply-sparse-checkout.sh"
