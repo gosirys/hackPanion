@@ -61,7 +61,7 @@ To add a new selective-sync repo, edit `.config/submodules.txt` and run `.config
 | [projectdiscovery/cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-03-25 |
 | [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-03-25 |
 | [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-03-25 |
-| [projectdiscovery/public-bugbounty-programs](https://github.com/projectdiscovery/public-bugbounty-programs) | `public-bugbounty-programs` | 2026-03-16 |
+| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-03-28 |
 | [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-03-16 |
 | [ayoubfathi/leaky-paths](https://github.com/ayoubfathi/leaky-paths) | `leaky-paths` | 2026-02-22 |
 | [random-robbie/bruteforce-lists](https://github.com/random-robbie/bruteforce-lists) | `bruteforce-lists` | 2026-02-18 |
@@ -109,5 +109,5 @@ All repos below use selective sync to only keep data files (no images, docs, scr
 
 | Repository                                              | Synced | Description                                                                           |
 |:--------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------|
-| [projectdiscovery/public-bugbounty-programs](https://github.com/projectdiscovery/public-bugbounty-programs) | `dist/data.json` | Aggregated public bug bounty program data from major platforms. |
+| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `data/*.json` | Per-platform bug bounty scope data with in/out-of-scope targets, asset types, wildcards, and reward info. Auto-updated every 30 min. |
 
