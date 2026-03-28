@@ -37,3 +37,6 @@
 [submodule "fingerprint/cdncheck"]
 	path = fingerprint/cdncheck
 	url = https://github.com/projectdiscovery/cdncheck
+[submodule "public-bugbounty-programs"]
+	path = public-bugbounty-programs
+	url = https://github.com/projectdiscovery/public-bugbounty-programs

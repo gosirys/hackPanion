@@ -104,3 +104,9 @@ All repos below use selective sync to only keep data files (no images, docs, scr
 |:--------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------|
 | [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `yaml, json` | Community-curated vulnerability templates for the Nuclei scanner. |
 
+### Bug Bounty (selective sync)
+
+| Repository                                              | Synced | Description                                                                           |
+|:--------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------|
+| [projectdiscovery/public-bugbounty-programs](https://github.com/projectdiscovery/public-bugbounty-programs) | `dist/data.json` | Aggregated public bug bounty program data from major platforms. |
+
