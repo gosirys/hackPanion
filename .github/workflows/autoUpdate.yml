@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repo w/ submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           token: ${{ secrets.CUSTOM_PAT || secrets.GITHUB_TOKEN }}
@@ -110,7 +110,7 @@ jobs:
           git add .
           if ! git diff --staged --quiet; then
             git commit -m "chore: update submodule pointers"
-            git push --force-with-lease
+            git push
           else
             echo "No updates to commit."
           fi
