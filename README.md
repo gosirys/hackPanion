@@ -55,11 +55,11 @@ To add a new selective-sync repo, edit `.config/submodules.txt` and run `.config
 <!-- SUBMODULE-STATUS:START -->
 | Repository | Path | Last Updated |
 |:-----------|:-----|:-------------|
+| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-04 |
+| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-04-04 |
 | [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-04-04 |
+| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-04 |
 | [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-04-04 |
-| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-03 |
-| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-04-03 |
-| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-03 |
 | [ayoubfathi/leaky-paths](https://github.com/ayoubfathi/leaky-paths) | `leaky-paths` | 2026-04-03 |
 | [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-04-01 |
 | [projectdiscovery/cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-03-29 |
