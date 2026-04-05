@@ -18,6 +18,34 @@ Say you have custom dictionaries, payloads, exploits all sitting on private repo
 
 
 ---
+
+<!-- CHANGELOG:START -->
+<details>
+<summary>Changelog</summary>
+
+| Commit | Description | Files | Changes | Net |
+|--------|-------------|:-----:|:-------:|:---:|
+| [`b98b91e`](https://github.com/gosirys/hackPanion/commit/b98b91e6aa69474cf54af308e50888bba687d5dd) | feat: unified commit hooks — README changelog | 1 | +24/−0 | 24 |
+| [`d3d9021`](https://github.com/gosirys/hackPanion/commit/d3d9021782725cada1f612531e0e7de066e91549) | fix: replace --force-with-lease with plain push, bump checkout to v4 | 1 | +2/−2 | 0 |
+| [`20f64ed`](https://github.com/gosirys/hackPanion/commit/20f64ed995a8c3d683ffa3bf3cb457a447a6f6f7) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
+| [`661d680`](https://github.com/gosirys/hackPanion/commit/661d680507b70f14a119cce3fcd05885a4711524) | Auto-commit submodule changes in hackPanion | 4 | +4/−4 | 0 |
+| [`45bc94f`](https://github.com/gosirys/hackPanion/commit/45bc94f0fc85a73fe6176a95736056603987c82e) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
+| [`9c7d7c6`](https://github.com/gosirys/hackPanion/commit/9c7d7c67dc809b93d6a36e184a8d72a682cfb527) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
+| [`8f53624`](https://github.com/gosirys/hackPanion/commit/8f536247da91d924f12503dc261397ba0f4fbf4d) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
+| [`5f0bb4f`](https://github.com/gosirys/hackPanion/commit/5f0bb4fcf7013be50d75495188fd3724ba627cc1) | chore: update submodule pointers | 6 | +6/−6 | 0 |
+| [`87be21f`](https://github.com/gosirys/hackPanion/commit/87be21f203ca578a65647dcdcf065735650f5bba) | Auto-commit submodule changes in hackPanion | 4 | +4/−4 | 0 |
+| [`1b89f0e`](https://github.com/gosirys/hackPanion/commit/1b89f0eb46c04a67d5a5bd0d81a16c23391d3b25) | docs: update README for bounty-targets-data submodule swap | 0 | +0/−0 | 0 |
+| [`4a24bed`](https://github.com/gosirys/hackPanion/commit/4a24bed3588d026575ed1d7a5a18d6a0633722a9) | feat: replace public-bugbounty-programs with arkadiyt/bounty-targets-data | 3 | +5/−4 | 1 |
+| [`5353d65`](https://github.com/gosirys/hackPanion/commit/5353d65e012a1a204a7f1ee17f245adf5def5756) | fix: add public-bugbounty-programs to README submodule status table | 0 | +0/−0 | 0 |
+| [`f937a85`](https://github.com/gosirys/hackPanion/commit/f937a850fb6765b711eeac6672aa74f37762eef8) | feat: add projectdiscovery/public-bugbounty-programs as sparse submodule | 3 | +5/−0 | 5 |
+| [`51f0de7`](https://github.com/gosirys/hackPanion/commit/51f0de72f678f7a08af80ba08f3e81ea1dbec1fe) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
+| [`b2df32f`](https://github.com/gosirys/hackPanion/commit/b2df32f09e30af9f9e6e141609e5a177dd85592b) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
+
+_Auto-generated — last 15 commits._
+
+</details>
+<!-- CHANGELOG:END -->
+
 ## Usage
 ### Clone
 

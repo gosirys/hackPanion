@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# post-commit — auto-generate changelog in README.md
+# Installed by: prysm-env/prysm-env/shell/hooks/install_hooks.sh
+
+# ── Machine gate ─────────────────────────────────────────────────────
+[ "$MACHINE" != "yp3rz" ] && exit 0
+
+# ── Recursion guard ──────────────────────────────────────────────────
+[ "$POST_COMMIT_RUNNING" = "1" ] && exit 0
+export POST_COMMIT_RUNNING=1
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+HOOKS_LIB="${HOME}/.local/share/prysm/hooks"
+
+# ── Changelog in README.md ───────────────────────────────────────────
+if [ -f "$HOOKS_LIB/update_readme_changelog.sh" ]; then
+	"$HOOKS_LIB/update_readme_changelog.sh" "$REPO_ROOT" 2>/dev/null || true
+fi
+
+# ── Amend to include generated changes ───────────────────────────────
+git add "$REPO_ROOT/README.md" 2>/dev/null
+if ! git diff --cached --quiet; then
+	git commit --amend --no-edit --quiet
+fi
