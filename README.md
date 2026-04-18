@@ -83,15 +83,15 @@ To add a new selective-sync repo, edit `.config/submodules.txt` and run `.config
 <!-- SUBMODULE-STATUS:START -->
 | Repository | Path | Last Updated |
 |:-----------|:-----|:-------------|
-| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-17 |
-| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-04-17 |
-| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-04-17 |
-| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-17 |
-| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-04-17 |
-| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-04-17 |
+| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-18 |
+| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-04-18 |
+| [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-04-18 |
+| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-04-18 |
+| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-18 |
+| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-04-18 |
+| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-04-18 |
 | [chainreactors/fingers](https://github.com/chainreactors/fingers) | `fingerprint/fingers` | 2026-04-16 |
 | [projectdiscovery/cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-04-12 |
-| [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-04-08 |
 | [ayoubfathi/leaky-paths](https://github.com/ayoubfathi/leaky-paths) | `leaky-paths` | 2026-04-03 |
 | [random-robbie/bruteforce-lists](https://github.com/random-robbie/bruteforce-lists) | `bruteforce-lists` | 2026-02-18 |
 | [many-passwords/many-passwords](https://github.com/many-passwords/many-passwords) | `many-passwords` | 2024-09-06 |
