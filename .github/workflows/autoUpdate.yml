@@ -5,13 +5,16 @@ on:
     - cron: '58 18 * * *'    # adjust as needed
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo w/ submodules
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           token: ${{ secrets.CUSTOM_PAT || secrets.GITHUB_TOKEN }}

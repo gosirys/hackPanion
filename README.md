@@ -25,21 +25,21 @@ Say you have custom dictionaries, payloads, exploits all sitting on private repo
 
 | Commit | Description | Files | Changes | Net |
 |--------|-------------|:-----:|:-------:|:---:|
-| [`b98b91e`](https://github.com/gosirys/hackPanion/commit/b98b91e6aa69474cf54af308e50888bba687d5dd) | feat: unified commit hooks — README changelog | 1 | +24/−0 | 24 |
-| [`d3d9021`](https://github.com/gosirys/hackPanion/commit/d3d9021782725cada1f612531e0e7de066e91549) | fix: replace --force-with-lease with plain push, bump checkout to v4 | 1 | +2/−2 | 0 |
-| [`20f64ed`](https://github.com/gosirys/hackPanion/commit/20f64ed995a8c3d683ffa3bf3cb457a447a6f6f7) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
-| [`661d680`](https://github.com/gosirys/hackPanion/commit/661d680507b70f14a119cce3fcd05885a4711524) | Auto-commit submodule changes in hackPanion | 4 | +4/−4 | 0 |
-| [`45bc94f`](https://github.com/gosirys/hackPanion/commit/45bc94f0fc85a73fe6176a95736056603987c82e) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
-| [`9c7d7c6`](https://github.com/gosirys/hackPanion/commit/9c7d7c67dc809b93d6a36e184a8d72a682cfb527) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
-| [`8f53624`](https://github.com/gosirys/hackPanion/commit/8f536247da91d924f12503dc261397ba0f4fbf4d) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
-| [`5f0bb4f`](https://github.com/gosirys/hackPanion/commit/5f0bb4fcf7013be50d75495188fd3724ba627cc1) | chore: update submodule pointers | 6 | +6/−6 | 0 |
-| [`87be21f`](https://github.com/gosirys/hackPanion/commit/87be21f203ca578a65647dcdcf065735650f5bba) | Auto-commit submodule changes in hackPanion | 4 | +4/−4 | 0 |
-| [`1b89f0e`](https://github.com/gosirys/hackPanion/commit/1b89f0eb46c04a67d5a5bd0d81a16c23391d3b25) | docs: update README for bounty-targets-data submodule swap | 0 | +0/−0 | 0 |
-| [`4a24bed`](https://github.com/gosirys/hackPanion/commit/4a24bed3588d026575ed1d7a5a18d6a0633722a9) | feat: replace public-bugbounty-programs with arkadiyt/bounty-targets-data | 3 | +5/−4 | 1 |
-| [`5353d65`](https://github.com/gosirys/hackPanion/commit/5353d65e012a1a204a7f1ee17f245adf5def5756) | fix: add public-bugbounty-programs to README submodule status table | 0 | +0/−0 | 0 |
-| [`f937a85`](https://github.com/gosirys/hackPanion/commit/f937a850fb6765b711eeac6672aa74f37762eef8) | feat: add projectdiscovery/public-bugbounty-programs as sparse submodule | 3 | +5/−0 | 5 |
-| [`51f0de7`](https://github.com/gosirys/hackPanion/commit/51f0de72f678f7a08af80ba08f3e81ea1dbec1fe) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
-| [`b2df32f`](https://github.com/gosirys/hackPanion/commit/b2df32f09e30af9f9e6e141609e5a177dd85592b) | Auto-commit submodule changes in hackPanion | 5 | +5/−5 | 0 |
+| [`797747f`](https://github.com/gosirys/hackPanion/commit/797747f756d9ff6badfb39d9d25107ebefa3a99d) | ci: run checkout on node24 in hackPanion | 1 | +4/−1 | 3 |
+| [`f6a7462`](https://github.com/gosirys/hackPanion/commit/f6a74620b1a6f2b291803969cc3df5e5c1484dbc) | chore: update submodule pointers | 1 | +1/−1 | 0 |
+| [`11e4505`](https://github.com/gosirys/hackPanion/commit/11e450566e11042acc83d351909a377fe621003c) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
+| [`93c5039`](https://github.com/gosirys/hackPanion/commit/93c5039ab33785ab25976bb58f87b44e8b2ee2ce) | chore: update submodule pointers | 7 | +7/−7 | 0 |
+| [`962a59a`](https://github.com/gosirys/hackPanion/commit/962a59a80c1f0474fde216e8c5a1a8b3c6c2aabf) | chore: update submodule pointers | 7 | +7/−7 | 0 |
+| [`8a30b9e`](https://github.com/gosirys/hackPanion/commit/8a30b9e634f24d94f24e512ea4230e3f4f540ec7) | chore: update submodule pointers | 6 | +6/−6 | 0 |
+| [`2e9dc54`](https://github.com/gosirys/hackPanion/commit/2e9dc545b760d0eec4032be3c75280e4c5245b9b) | chore: update submodule pointers | 7 | +7/−7 | 0 |
+| [`db2c53e`](https://github.com/gosirys/hackPanion/commit/db2c53e698404b6d3176dfb516ca1ce9a0111782) | chore: update submodule pointers | 7 | +7/−7 | 0 |
+| [`0eba49b`](https://github.com/gosirys/hackPanion/commit/0eba49b6f78cc955e95a5a4b1f2b77a1a90f79ea) | chore: update submodule pointers | 6 | +6/−6 | 0 |
+| [`0447576`](https://github.com/gosirys/hackPanion/commit/04475762ba3655b0c89a0ec133aefe92f9eaf55d) | chore: update submodule pointers | 7 | +7/−7 | 0 |
+| [`c05e3aa`](https://github.com/gosirys/hackPanion/commit/c05e3aa43622856725831ba50f134c2230048b39) | chore: update submodule pointers | 6 | +6/−6 | 0 |
+| [`d8dd1d0`](https://github.com/gosirys/hackPanion/commit/d8dd1d070d98fca4e41931b5978a4596ea241e28) | chore: update submodule pointers | 6 | +6/−6 | 0 |
+| [`c0eaa6d`](https://github.com/gosirys/hackPanion/commit/c0eaa6dbe865c916977fcbcfa6fb0cb6bdc1ce1e) | chore: update submodule pointers | 5 | +5/−5 | 0 |
+| [`b18637d`](https://github.com/gosirys/hackPanion/commit/b18637d0de8c1b7315939b967310e59820ea670c) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
+| [`1853d3e`](https://github.com/gosirys/hackPanion/commit/1853d3e63b3a6b2f5da22610b4863fd612aab551) | Auto-commit submodule changes in hackPanion | 6 | +6/−6 | 0 |
 
 _Auto-generated — last 15 commits._
 
