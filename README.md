@@ -83,12 +83,12 @@ To add a new selective-sync repo, edit `.config/submodules.txt` and run `.config
 <!-- SUBMODULE-STATUS:START -->
 | Repository | Path | Last Updated |
 |:-----------|:-----|:-------------|
-| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-26 |
-| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-04-26 |
+| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-04-27 |
+| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-04-27 |
+| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-27 |
+| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-04-27 |
+| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-04-27 |
 | [projectdiscovery/cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-04-26 |
-| [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-04-26 |
-| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-04-26 |
-| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-04-26 |
 | [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-04-24 |
 | [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-04-22 |
 | [chainreactors/fingers](https://github.com/chainreactors/fingers) | `fingerprint/fingers` | 2026-04-16 |
