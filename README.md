@@ -83,11 +83,11 @@ To add a new selective-sync repo, edit `.config/submodules.txt` and run `.config
 <!-- SUBMODULE-STATUS:START -->
 | Repository | Path | Last Updated |
 |:-----------|:-----|:-------------|
-| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-06-23 |
-| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-06-23 |
-| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-06-23 |
-| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-06-23 |
-| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-06-23 |
+| [trickest/wordlists](https://github.com/trickest/wordlists) | `wordlists` | 2026-06-24 |
+| [trickest/resolvers](https://github.com/trickest/resolvers) | `resolvers` | 2026-06-24 |
+| [projectdiscovery/nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) | `nuclei-templates` | 2026-06-24 |
+| [arkadiyt/bounty-targets-data](https://github.com/arkadiyt/bounty-targets-data) | `bounty-targets-data` | 2026-06-24 |
+| [0x727/FingerprintHub](https://github.com/0x727/FingerprintHub) | `fingerprint/FingerprintHub` | 2026-06-24 |
 | [danielmiessler/SecLists](https://github.com/danielmiessler/SecLists) | `SecLists` | 2026-06-22 |
 | [projectdiscovery/cdncheck](https://github.com/projectdiscovery/cdncheck) | `fingerprint/cdncheck` | 2026-06-21 |
 | [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) | `PayloadsAllTheThings` | 2026-06-19 |
