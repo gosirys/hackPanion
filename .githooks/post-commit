@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+#
+# post-commit: reconcile self-owned generated artifacts.
+#
+# README.md (changelog) and docs/doc_index.md are regenerated and staged by the
+# pre-commit hook so the commit SHA is final on first write. A pathspec commit
+# builds HEAD from a temporary index and can leave those artifacts staged in the
+# real index afterward (worktree copy unstaged) — a perpetual staged residue.
+# Reset the real index + worktree of exactly the generated artifacts THIS commit
+# changed back to HEAD, scoped to the fixed generated set and the commit's own
+# changed subset so unrelated staging is untouched. These files are reproducible,
+# so resetting never loses committed content. Never amends, so a rebase or
+# cherry-pick is never wedged. Serialized against the pre-commit regen window by
+# the same mutex; if the lock is busy we skip (residue self-heals next commit).
+#
+set -uo pipefail
+
+GIT_DIR_REAL="$(git rev-parse --git-dir 2>/dev/null)" || exit 0
+
+RECON_ARTIFACTS="README.md docs/doc_index.md"
+RECON_CHANGED="$(git diff-tree --no-commit-id --name-only -r HEAD 2>/dev/null)"
+RECON_TARGETS=""
+for a in $RECON_ARTIFACTS; do
+	printf '%s\n' "$RECON_CHANGED" | grep -qxF "$a" && RECON_TARGETS="$RECON_TARGETS $a"
+done
+
+if [ -n "$RECON_TARGETS" ]; then
+	RECON_LOCK="$GIT_DIR_REAL/prysm-precommit.lock.d"
+	RECON_GOT=""; RECON_WAITED=0
+	while [ "$RECON_WAITED" -le 20 ]; do
+		if mkdir "$RECON_LOCK" 2>/dev/null; then RECON_GOT=1; break; fi
+		RECON_WAITED=$((RECON_WAITED + 1)); sleep 1
+	done
+	if [ -n "$RECON_GOT" ]; then
+		git checkout -q HEAD -- $RECON_TARGETS 2>/dev/null || true
+		rmdir "$RECON_LOCK" 2>/dev/null || true
+	fi
+fi
+exit 0
